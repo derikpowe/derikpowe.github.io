@@ -59,6 +59,18 @@ function start() { // Inicio da função start ()
 			}
 		}
 
+		//Limita movimentação
+		var topo = parseInt($("jogador").css("top"));
+		if (topo<=0) {
+			$("#jogador").css("top",0);
+
+		}
+
+		if (topo>=410) {
+			$("#jogador").css("top",434);
+
+		}
+
 	//Game Loop
 
 	jogo.timer = setInterval (loop,30);
@@ -66,7 +78,7 @@ function start() { // Inicio da função start ()
 	function loop() {
 		
 	movefundo();
-	movejogador();
+	disparo()
 	moveinimigo1(); 
 	moveinimigo2();
 	moveamigo();
